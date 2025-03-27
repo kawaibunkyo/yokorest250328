@@ -27,7 +27,7 @@ function initialize() {
         navigationHelpButton: false,
         scene3DOnly: true,
         skyBox: false,
-        skyAtmosphere: true,
+        skyAtmosphere: false, // 大気効果をオフに変更
     });
 
     // 航空写真の追加
