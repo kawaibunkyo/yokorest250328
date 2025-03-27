@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>横浜駅周辺飲食店情報</title>
+        <link href="style.css" rel="stylesheet" />
+        <!-- Include the CesiumJS JavaScript and CSS files -->
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Cesium.js"></script>
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Menu bar -->
+        <div id="menuBar">
+            <div>
+                <input type="text" id="searchBox" placeholder="名前やレビューで検索">
+                <button id="searchButton">検索</button>
+                <button id="clearButton">検索をクリア</button>
+            </div>
+<!-- 
+            <div id="typeFilter">
+                <h4>カテゴリで絞り込み:</h4>
+                <label><input type="checkbox" name="type" value="restaurant" onchange="updateFilter()">レストラン</label>
+                <label><input type="checkbox" name="type" value="bar" onchange="updateFilter()">バー</label>
+                <label><input type="checkbox" name="type" value="meal_takeaway" onchange="updateFilter()">テイクアウト</label>
+                <label><input type="checkbox" name="type" value="food" onchange="updateFilter()">フード全般</label>
+            </div> -->
+
+            <button onclick="location.href='../cesium_price/index.html';">価格帯で表示</button>
+
+            <!-- <div>
+                <label for="priceFilter"><input type="radio" name="type" value="price" onchange="updateFilter()">価格帯で絞り込み:</label>
+                <div id="priceFilter">
+                    <label id="check1"><input type="checkbox" value="1" onchange="updateFilter()"> ¥</label>
+                    <label id="check2"><input type="checkbox" value="2" onchange="updateFilter()"> ¥¥</label>
+                    <label id="check3"><input type="checkbox" value="3" onchange="updateFilter()"> ¥¥¥</label>
+                    <label id="check4"><input type="checkbox" value="4" onchange="updateFilter()"> ¥¥¥¥</label>
+                </div>
+            </div> -->
+
+            <div>
+                <label for="ratingFilter"><input type="radio" name="type" value="rating" onchange="updateFilter()">評価で絞り込み:</label>
+                <div id="ratingFilter">
+                    <label id="hosi1"><input type="checkbox" value="1" onchange="updateFilter()"> ★1</label>
+                    <label id="hosi2"><input type="checkbox" value="2" onchange="updateFilter()"> ★2</label>
+                    <label id="hosi3"><input type="checkbox" value="3" onchange="updateFilter()"> ★3</label>
+                    <label id="hosi4"><input type="checkbox" value="4" onchange="updateFilter()"> ★4</label>
+                    <label id="hosi5"><input type="checkbox" value="5" onchange="updateFilter()"> ★5</label>
+                </div>
+            </div>
+
+            <button onclick="location.href='../cesium_rating_cluster/index.html';">評価情報をクラスタで表示</button>
+        </div>
+
+
+        <div id="menuBar2">
+            <div id="searchResults">
+                <!-- 検索結果がここに表示されます -->
+            </div>
+        </div>
+
+        <!-- Cesium container -->
+        <div id="cesiumContainer"></div>
+        <script src="main.js"></script>
+    </body>
+</html>

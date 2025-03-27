@@ -1,0 +1,111 @@
+style.css
+#cesiumContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+}
+html {
+    height: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+div{
+    margin-bottom: 20px;
+}
+
+/*追加*/
+/* メニューバーのスタイル */
+#menuBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 黒の背景、不透明度50％ */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 100; /* Cesiumのコンテナの上に表示するためのZ-index */
+}
+
+#menuBar2 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 黒の背景、不透明度50％ */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 100; /* Cesiumのコンテナの上に表示するためのZ-index */
+}
+
+#menuBar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menuBar li {
+    margin-bottom: 20px;
+}
+
+#menuBar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#menuBar a:hover {
+    text-decoration: underline;
+}
+
+/* Cesiumコンテナのスタイル */
+#cesiumContainer {
+    position: absolute;
+    top: 0;
+    left: 200px; /* メニューバーの幅に合わせて左に200pxのマージンを取る */
+    width: calc(100% - 200px); /* メニューバーを避けた残りの領域を使用 */
+    height: 100%;
+}
+
+/*価格*/
+#check1 {  
+    color: hsl(120, 70%, 50%);
+}
+#check2 {  
+    color: hsl(80, 70%, 50%);
+}
+#check3 {  
+    color: hsl(40, 70%, 50%);
+}
+#check4 {  
+    color: hsl(0, 70%, 50%);
+}
+
+/*評価*/
+#hosi1 {  
+    color: hsl(80, 20%, 50%);
+}
+#hosi2 {  
+    color: hsl(80, 40%, 50%);
+}
+#hosi3 {  
+    color: hsl(80, 60%, 50%);
+}
+#hosi4 {  
+    color: hsl(80, 80%, 50%);
+}
+#hosi5 {  
+    color: hsl(80, 100%, 50%);
+}

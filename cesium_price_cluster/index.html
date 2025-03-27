@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>横浜駅周辺飲食店情報</title>
+        <link href="style.css" rel="stylesheet" />
+        <!-- Include the CesiumJS JavaScript and CSS files -->
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Cesium.js"></script>
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Menu bar -->
+        <div id="menuBar">
+            <!-- <div id="typeFilter">
+                <h4>カテゴリで絞り込み:</h4>
+                <label><input type="checkbox" name="type" value="restaurant">レストラン</label>
+                <label><input type="checkbox" name="type" value="bar">バー</label>
+                <label><input type="checkbox" name="type" value="meal_takeaway">テイクアウト</label>
+                <label><input type="checkbox" name="type" value="food">フード全般</label>
+            </div> -->
+
+            <div>
+                <label for="priceFilter">価格帯で絞り込み:</label>
+                <div id="priceFilter">
+                    <label id="check1">
+                        <input type="checkbox" value="1" onchange="updatePriceFilter()"> ¥
+                    </label>
+                    <label id="check2">
+                        <input type="checkbox" value="2" onchange="updatePriceFilter()"> ¥¥
+                    </label>
+                    <label id="check3">
+                        <input type="checkbox" value="3" onchange="updatePriceFilter()"> ¥¥¥
+                    </label>
+                    <label id="check4">
+                        <input type="checkbox" value="4" onchange="updatePriceFilter()"> ¥¥¥¥
+                    </label>
+                </div>
+            </div>
+
+            <button onclick="location.href='../index.html';">価格帯データを店舗ごとに表示</button>
+
+
+
+
+        </div>
+
+        <!-- Cesium container -->
+        <div id="cesiumContainer"></div>
+        <script src="main.js"></script>
+    </body>
+</html>
