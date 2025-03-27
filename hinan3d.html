@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>3D避難経路マップ</title>
+    <meta name="description" content="3D避難経路マップ" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <!-- Cesium JS -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <h1>3D避難経路マップ</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="hinanmap.html">2D避難マップ</a></li>
+          <li><a href="hinan3d.html" class="active">3D避難マップ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- サイドメニュー -->
+    <div id="sideMenu">
+      <div id="filterContainer">
+        <h3>避難所フィルター</h3>
+        
+        <!-- 避難所種類のフィルター -->
+        <div class="filter-section">
+          <h4>避難所の種類</h4>
+          <div>
+            <label><input type="checkbox" name="shelterType" value="指定避難所" checked> 指定避難所</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="shelterType" value="広域避難場所" checked> 広域避難場所</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="shelterType" value="一時避難場所" checked> 一時避難場所</label>
+          </div>
+        </div>
+        
+        <!-- 避難所レベルフィルター -->
+        <div class="filter-section">
+          <h4>避難所レベル</h4>
+          <div class="range-filter">
+            <input type="range" id="levelFilter" min="1" max="5" value="1" step="1">
+            <span>レベル <span id="levelValue">1</span> 以上</span>
+          </div>
+        </div>
+        
+        <!-- 移動手段選択 -->
+        <div class="filter-section">
+          <h4>移動手段</h4>
+          <div>
+            <label><input type="radio" name="transportMode" value="foot-walking" checked> 徒歩</label>
+          </div>
+          <div>
+            <label><input type="radio" name="transportMode" value="driving-car"> 自動車</label>
+          </div>
+          <div>
+            <label><input type="radio" name="transportMode" value="cycling-regular"> 自転車</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 操作ボタン -->
+      <div class="action-buttons">
+        <button id="getCurrentLocationBtn" class="btn">現在地を取得</button>
+        <button id="resetViewBtn" class="btn">表示をリセット</button>
+        <button id="toggleBuildingsBtn" class="btn">建物表示切替</button>
+      </div>
+      
+      <!-- 最寄り避難所情報 -->
+      <div id="nearestShelterInfo" class="info-panel">
+        <h3>最寄りの避難所</h3>
+        <div id="shelterDetails">
+          <p>現在地を取得すると、最寄りの避難所情報が表示されます。</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cesiumコンテナ -->
+    <div id="cesiumContainer"></div>
+    
+    <!-- 凡例 -->
+    <div id="legend">
+      <h4>避難所の凡例</h4>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: rgba(0, 255, 0, 0.7);"></div>
+        <span>指定避難所</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: rgba(0, 0, 255, 0.7);"></div>
+        <span>広域避難場所</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background-color: rgba(255, 255, 0, 0.7);"></div>
+        <span>一時避難場所</span>
+      </div>
+      <div class="legend-note">
+        <p>※ 高さは避難所レベルを表しています</p>
+      </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="main3d.js"></script>
+  </body>
+</html>
