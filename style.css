@@ -368,3 +368,30 @@ input[type="range"]:focus {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
+
+#map {
+  position: absolute;
+  top: 60px; /* ヘッダーの高さに合わせる */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+/* 2D避難マップのスタイル */
+.evacuation-2d-map #map {
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .evacuation-2d-map #map {
+    top: 50px;
+    height: calc(100% - 50px);
+  }
+}
