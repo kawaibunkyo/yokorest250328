@@ -1,117 +1,3 @@
-style.css
-#cesiumContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    font-family: sans-serif;
-}
-html {
-    height: 100%;
-}
-body {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    height: 100%;
-}
-div{
-    margin-bottom: 20px;
-}
-
-/*追加*/
-/* メニューバーのスタイル */
-#menuBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 黒の背景、不透明度50％ */
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 100; /* Cesiumのコンテナの上に表示するためのZ-index */
-}
-
-#menuBar2 {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 200px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 黒の背景、不透明度50％ */
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 100; /* Cesiumのコンテナの上に表示するためのZ-index */
-}
-
-#menuBar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#menuBar li {
-    margin-bottom: 20px;
-}
-
-#menuBar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-#menuBar a:hover {
-    text-decoration: underline;
-}
-
-/* Cesiumコンテナのスタイル */
-#cesiumContainer {
-    position: absolute;
-    top: 0;
-    left: 200px; /* メニューバーの幅に合わせて左に200pxのマージンを取る */
-    width: calc(100% - 200px); /* メニューバーを避けた残りの領域を使用 */
-    height: 100%;
-}
-
-/*価格*/
-#check1 {  
-    color: hsl(120, 70%, 50%);
-}
-#check2 {  
-    color: hsl(80, 70%, 50%);
-}
-#check3 {  
-    color: hsl(40, 70%, 50%);
-}
-#check4 {  
-    color: hsl(0, 70%, 50%);
-}
-
-/*評価*/
-#hosi1 {  
-    color: hsl(80, 20%, 50%);
-}
-#hosi2 {  
-    color: hsl(80, 40%, 50%);
-}
-#hosi3 {  
-    color: hsl(80, 60%, 50%);
-}
-#hosi4 {  
-    color: hsl(80, 80%, 50%);
-}
-#hosi5 {  
-    color: hsl(80, 100%, 50%);
-}
-
-//////////////////
-
 /* 全体のリセット */
 body, h1, h2, h3, h4, p, ul, li, a {
   margin: 0;
@@ -119,19 +5,21 @@ body, h1, h2, h3, h4, p, ul, li, a {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
-  margin: 0;
-  overflow: hidden;
-  height: 100vh;
 }
 
 /* ヘッダー */
 header {
-  background: #0078d7;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 0.5rem;
   text-align: center;
@@ -169,6 +57,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+  text-decoration: underline;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -184,11 +73,54 @@ nav ul li a.active {
   left: 0;
   width: 300px;
   height: calc(100% - 60px);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 1rem;
   overflow-y: auto;
   z-index: 50;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 黒背景サイドメニュー（既存の横浜駅周辺飲食店アプリ用） */
+#menuBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+#menuBar2 {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+#menuBar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menuBar li {
+  margin-bottom: 20px;
+}
+
+#menuBar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 /* フィルターセクション */
@@ -200,7 +132,7 @@ nav ul li a.active {
 
 .filter-section h4 {
   margin-bottom: 0.5rem;
-  color: #0078d7;
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -224,9 +156,9 @@ nav ul li a.active {
 .btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #0078d7;
+  background-color: #333333;
   color: white;
-  border: none;
+  border: 1px solid #666666;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -236,7 +168,7 @@ nav ul li a.active {
 }
 
 .btn:hover {
-  background-color: #0063a9;
+  background-color: #555555;
 }
 
 .action-buttons {
@@ -247,14 +179,15 @@ nav ul li a.active {
 
 /* 情報パネル */
 .info-panel {
-  background-color: #f5f5f5;
+  background-color: rgba(40, 40, 40, 0.8);
+  color: white;
   border-radius: 4px;
   padding: 1rem;
   margin-top: 1rem;
 }
 
 .info-panel h3 {
-  color: #0078d7;
+  color: #ffffff;
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
@@ -272,12 +205,27 @@ nav ul li a.active {
 /* Cesiumコンテナ */
 #cesiumContainer {
   position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 避難マップのCesiumコンテナ設定 */
+.evacuation-map #cesiumContainer {
   top: 60px; /* ヘッダーの高さに合わせる */
   left: 300px; /* サイドメニューの幅に合わせる */
   width: calc(100% - 300px);
   height: calc(100% - 60px);
-  margin: 0;
-  padding: 0;
+}
+
+/* 飲食店マップのCesiumコンテナ設定 */
+.restaurant-map #cesiumContainer {
+  top: 0;
+  left: 200px; /* メニューバーの幅に合わせて左に200pxのマージンを取る */
+  width: calc(100% - 200px);
+  height: 100%;
 }
 
 /* 凡例 */
@@ -285,7 +233,8 @@ nav ul li a.active {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -300,4 +249,122 @@ nav ul li a.active {
 .legend-item {
   display: flex;
   align-items: center;
-  margin: 0
+  margin: 0.3rem 0;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.legend-note {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* 価格表示の色設定 */
+#check1 {  
+  color: hsl(120, 70%, 50%);
+}
+#check2 {  
+  color: hsl(80, 70%, 50%);
+}
+#check3 {  
+  color: hsl(40, 70%, 50%);
+}
+#check4 {  
+  color: hsl(0, 70%, 50%);
+}
+
+/* 評価表示の色設定 */
+#hosi1 {  
+  color: hsl(80, 20%, 50%);
+}
+#hosi2 {  
+  color: hsl(80, 40%, 50%);
+}
+#hosi3 {  
+  color: hsl(80, 60%, 50%);
+}
+#hosi4 {  
+  color: hsl(80, 80%, 50%);
+}
+#hosi5 {  
+  color: hsl(80, 100%, 50%);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  header {
+    padding: 0.3rem;
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+  
+  #sideMenu {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+  
+  .evacuation-map #cesiumContainer {
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 250px);
+  }
+  
+  #menuBar, #menuBar2 {
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    top: auto;
+    left: 0;
+  }
+  
+  #menuBar2 {
+    left: 0;
+    top: 150px;
+  }
+  
+  .restaurant-map #cesiumContainer {
+    left: 0;
+    width: 100%;
+    height: calc(100% - 150px);
+  }
+  
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  #legend {
+    bottom: 210px;
+    right: 10px;
+    padding: 0.5rem;
+    max-width: 150px;
+    font-size: 0.8rem;
+  }
+}
+
+/* アクセシビリティ対応 */
+.btn:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input[type="range"]:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
